@@ -1,0 +1,25 @@
+{
+  "name": "oblivion-galaxy",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "test": "node --test",
+    "check": "npm test && npm run build",
+    "desktop": "npm run build && electron electron/main.js",
+    "package:mac": "npm run build && node scripts/packageMacApp.js"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "dependencies": {
+    "lil-gui": "^0.21.0",
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "electron": "^44.1.1",
+    "vite": "^8.2.2"
+  }
+}

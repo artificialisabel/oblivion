@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'none'; form-action 'self'" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Oblivion is a walkable knowledge galaxy for exploring Markdown notes as connected stars." />
+    <meta property="og:title" content="Oblivion" />
+    <meta property="og:description" content="A walkable knowledge galaxy for exploring Markdown notes, where your thoughts become connected stars." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./oblivion-cover.png" />
+    <meta property="og:image:width" content="2358" />
+    <meta property="og:image:height" content="1386" />
+    <meta property="og:image:alt" content="A glowing purple knowledge galaxy with connected nodes and a central avatar." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Oblivion" />
+    <meta name="twitter:description" content="A walkable knowledge galaxy for exploring Markdown notes, where your thoughts become connected stars." />
+    <meta name="twitter:image" content="./oblivion-cover.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="apple-touch-icon" href="./oblivion-icon.png" />
+    <title>Oblivion Graph Galaxy</title>
+  </head>
+  <body>
+    <main id="app" class="gc-ui" data-gc-theme="void">
+      <canvas id="scene"></canvas>
+      <div id="hud">
+        <div id="node-title" class="gc-natural-case"></div>
+      </div>
+      <section id="note-reader" aria-hidden="true">
+        <pre id="note-reader-text" class="gc-natural-case"></pre>
+      </section>
+      <section id="vault-panel" class="gc-panel" hidden>
+        <header class="gc-panel-head">
+          <span class="gc-panel-title">Vault</span>
+          <span id="vault-meta" class="gc-panel-meta">Choose a local Markdown folder</span>
+        </header>
+        <div class="gc-panel-body">
+          <div class="panel-row panel-status">
+            <span id="vault-name" class="gc-value gc-natural-case">No vault connected</span>
+            <button id="vault-choose" class="gc-chip" type="button">Vault</button>
+          </div>
+          <div class="panel-row panel-actions">
+            <button id="camera-toggle" class="gc-chip" type="button">POV</button>
+            <button id="avatar-choose" class="gc-chip" type="button">Avatar</button>
+            <button id="note-toggle" class="gc-chip" type="button">New Note</button>
+            <button id="note-edit" class="gc-chip" type="button" hidden>Edit Node</button>
+          </div>
+          <form id="note-form" hidden>
+            <input id="note-title-input" class="gc-field gc-natural-case" type="text" autocomplete="off" placeholder="Title" />
+            <textarea id="note-body-input" class="gc-textarea" rows="5" placeholder="Write a thought..."></textarea>
+            <input id="note-links-input" class="gc-field gc-natural-case" type="text" autocomplete="off" placeholder="links / stubs, comma separated" />
+            <div id="link-memory" hidden></div>
+            <div class="panel-row note-form-actions">
+              <button id="note-cancel" class="gc-chip" type="button">Cancel</button>
+              <button id="note-save" class="gc-chip" type="submit">Save Note</button>
+            </div>
+            <div id="note-form-status" class="gc-note"></div>
+          </form>
+          <div id="avatar-meta" class="gc-stats" hidden>
+            <div class="gc-stat">
+              <span>Avatar</span>
+              <strong id="avatar-name" class="gc-natural-case">Default</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div id="toolbar-dock" class="gc-panel gc-pill">
+        <button id="toolbar-toggle" class="gc-chip" type="button" aria-label="Toggle style toolbar">T</button>
+      </div>
+      <div id="mobile-controls" aria-label="movement controls">
+        <div id="move-joystick" class="mobile-joystick gc-panel" role="button" aria-label="Move">
+          <div id="move-stick" class="mobile-joystick-stick"></div>
+        </div>
+        <div id="mobile-lift-controls" aria-label="vertical movement">
+          <button class="mobile-lift-button mobile-lift-up gc-panel" type="button" aria-label="Move up"></button>
+          <button class="mobile-lift-button mobile-lift-down gc-panel" type="button" aria-label="Move down"></button>
+        </div>
+      </div>
+      <div id="help" class="gc-panel gc-hint-strip">
+        <span>WASD</span>
+        <span>Mouse orbit</span>
+        <span>Space / Shift</span>
+        <span>V view</span>
+        <span>O open</span>
+        <span id="edit-help">E edit</span>
+        <span id="toolbar-help">T toolbar</span>
+      </div>
+    </main>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

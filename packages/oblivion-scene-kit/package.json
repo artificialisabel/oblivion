@@ -1,0 +1,15 @@
+{
+  "name": "oblivion-scene-kit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js",
+    "./nebulaSystem": "./src/nebulaSystem.js",
+    "./previewText": "./src/previewText.js",
+    "./readerText": "./src/readerText.js"
+  },
+  "peerDependencies": {
+    "three": "^0.185.1"
+  }
+}
