@@ -4,6 +4,11 @@ A walkable, local-first knowledge galaxy for a Markdown vault. Every note become
 star, every `[[wiki link]]` becomes a thread, and the selected folder stays on the
 computer running the app.
 
+**Live online edition:** [oblivion.artificialisabel.com](https://oblivion.artificialisabel.com)
+
+The hosted edition is a separate online product, not a browser build of this
+local-first source snapshot.
+
 Built with [Vite](https://vite.dev), [three.js](https://threejs.org), and
 [Electron](https://www.electronjs.org).
 
